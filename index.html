@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacunación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-200 min-h-full">
+    <main class="container mx-auto mb-10 px-4 w-full flex justify-center">
+        <div id="form" class="w-1/2 mt-3 p-5 bg-slate-50 rounded-lg shadow-2xl">
+            <h1 class="text-5xl text-center mt-4">Sistema de Vacunación</h1>
+            <form id="formulario" action="">
+                <fieldset class="mt-5 p-4">
+                    <legend class="text-xl font-bold">Coloca tu edad</legend>
+                    <label for="edad" class="text-lg">¿Que edad tienes? </label>
+                    <input type="number" name="edad" id="edad" min="1" max="100"
+                        class="h-full rounded-md sm:text-lg border-2 border-gray-500 px-2">
+                    <span class="text-lg">Años cumplidos</span>
+                </fieldset>
+                <fieldset class="p-4">
+                    <legend class="text-xl font-bold">Selecciona tu Género</legend>
+                    <div class="genero">
+                        <input type="radio" name="genero" id="mujer" value="mujer">
+                        <label for="mujer" class="text-lg">Mujer</label>
+                        <input type="radio" name="genero" id="hombre" value="hombre">
+                        <label for="hombre" class="text-lg">Hombre</label>
+                    </div>
+                </fieldset>
+                <fieldset id="embarazo" disabled="disabled" class="p-4">
+                    <legend class="text-xl font-bold text-gray-400">¿Estas embarazada?</legend>
+                    <div class="embarazada">
+                        <input type="radio" name="embarazada" id="si" value="si">
+                        <label for="si" class="text-lg">Si</label>
+                        <input type="radio" name="embarazada" id="no" value="no">
+                        <label for="no" class="text-lg">No</label>
+                    </div>
+                    <div class="semanas mt-2">
+                        <fieldset id="semanas" disabled="disabled" class="py-4">
+                            <legend class="text-xl font-bold text-gray-400">¿Cuántas semanas tienes de embarazo?</legend>
+                            <label for="semanas" class="text-lg">Semanas completas </label>
+                            <input type="number" name="semanas" id="semanasC" min="1" max="42"
+                                class="h-full rounded-md sm:text-lg border-2 border-gray-500 px-2">
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <fieldset class="p-4">
+                    <legend class="text-xl font-bold">¿En que zona vives?</legend>
+                    <select name="zona" id="zona" class="w-full rounded-md sm:text-lg border-2 border-gray-500">
+                        <option class="text-lg" value=""> -- Selecciona una zona -- </option>
+                        <option class="text-lg" value="fronteriza-norte">Zona Fronteriza Norte</option>
+                        <option class="text-lg" value="centro">Zona Centro</option>
+                        <option class="text-lg" value="fronteriza-sur">Zona Fronteriza Sur</option>
+                    </select>
+                </fieldset>
+                <div class="button px-4">
+                <button type="submit"
+                    class="rounded-md border-2 p-1 bg-zinc-50 hover:bg-zinc-300 mt-4">¿Puedo vacunarme?</button>
+                </div>
+            </form>
+            <div id="resp" class="mt-5 text-center"></div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
